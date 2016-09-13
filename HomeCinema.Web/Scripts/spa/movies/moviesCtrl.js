@@ -10,11 +10,10 @@
         $scope.loadingMovies = true;
         $scope.page = 0;
         $scope.pagesCount = 0;
-
         $scope.Movies = {};
 
         $scope.search = search;
-        $scope.clearSearch = clearSearch();
+        $scope.clearSearch = clearSearch;
 
         function search(page) {
             page = page || 0;

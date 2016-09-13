@@ -26,42 +26,42 @@ namespace HomeCinema.Web.Controllers
             _customersRepository = customersRepository;
         }
 
-        //public HttpResponseMessage Get(HttpRequestMessage request, string filter)
-        //{
-        //    filter = filter.ToLower().Trim();
+        public HttpResponseMessage Get(HttpRequestMessage request, string filter)
+        {
+            filter = filter.ToLower().Trim();
 
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
 
-        //        var customers = _customersRepository.GetAll()
-        //            .Where(c => c.Email.ToLower().Contains(filter) ||
-        //            c.FirstName.ToLower().Contains(filter) ||
-        //            c.LastName.ToLower().Contains(filter)).ToList();
+                var customers = _customersRepository.GetAll()
+                    .Where(c => c.Email.ToLower().Contains(filter) ||
+                    c.FirstName.ToLower().Contains(filter) ||
+                    c.LastName.ToLower().Contains(filter)).ToList();
 
-        //        var customersVm = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
+                var customersVm = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
 
-        //        response = request.CreateResponse<IEnumerable<CustomerViewModel>>(HttpStatusCode.OK, customersVm);
+                response = request.CreateResponse<IEnumerable<CustomerViewModel>>(HttpStatusCode.OK, customersVm);
 
-        //        return response;
-        //    });
-        //}
+                return response;
+            });
+        }
 
-        //[Route("details/{id:int}")]
-        //public HttpResponseMessage Get(HttpRequestMessage request, int id)
-        //{
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        var customer = _customersRepository.GetSingle(id);
+        [Route("details/{id:int}")]
+        public HttpResponseMessage Get(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var customer = _customersRepository.GetSingle(id);
 
-        //        CustomerViewModel customerVm = Mapper.Map<Customer, CustomerViewModel>(customer);
+                CustomerViewModel customerVm = Mapper.Map<Customer, CustomerViewModel>(customer);
 
-        //        response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.OK, customerVm);
+                response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.OK, customerVm);
 
-        //        return response;
-        //    });
-        //}
+                return response;
+            });
+        }
 
         [HttpPost]
         [Route("register")]
@@ -132,7 +132,7 @@ namespace HomeCinema.Web.Controllers
             });
         }
 
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         [Route("search/{page:int=0}/{pageSize=4}/{filter?}")]
         public HttpResponseMessage Search(HttpRequestMessage request, int? page, int? pageSize, string filter = null)
         {
