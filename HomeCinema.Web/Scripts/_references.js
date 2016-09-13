@@ -14,6 +14,7 @@
 /// <reference path="spa/layout/topbar.directive.js" />
 /// <reference path="spa/modules/common.core.js" />
 /// <reference path="spa/modules/common.ui.js" />
+/// <reference path="spa/movies/moviesctrl.js" />
 /// <reference path="spa/services/apiservice.js" />
 /// <reference path="spa/services/membershipservice.js" />
 /// <reference path="spa/services/notificationservice.js" />

@@ -3,12 +3,12 @@
 
     app.controller('indexCtrl', indexCtrl);
 
-    indexCtrl.$inject = ['$scope', 'apiService', 'notificationService']; 
+    indexCtrl.$inject = ['$scope', 'apiService', 'notificationService'];
 
     function indexCtrl($scope, apiService, notificationService) {
-        $scope.pageClass = 'page-hone';
+        $scope.pageClass = 'page-home';
         $scope.loadingMovies = true;
-        $scope.loadingGenre = true;
+        $scope.loadingGenres = true;
         $scope.isReadOnly = true;
 
         $scope.latestMovies = [];
@@ -17,7 +17,7 @@
         function loadData() {
             apiService.get('/api/movies/latest', null, moviesLoadCompleted, moviesLoadFailed);
 
-            apiService.get('/api/movies/genres', null, genresLoadCompleted, genresLoadFailed);
+            apiService.get("/api/genres/", null, genresLoadCompleted, genresLoadFailed);
         }
 
         function moviesLoadCompleted(result) {
@@ -43,7 +43,7 @@
                 resize: 'true'
             });
 
-            $scope.loadingGenre = false;
+            $scope.loadingGenres = false;
         }
 
         function genresLoadFailed(response) {
@@ -52,4 +52,5 @@
 
         loadData();
     }
+
 })(angular.module('homeCinema'));

@@ -20,7 +20,7 @@
                             notificationService.displayError('Authentication required.');
                             $rootScope.previousState = $location.path();
                             $location.path('/login');
-                        } else if (failurte != null) {
+                        } else if (failure != null) {
                             failure(error);
                         }
                     });
@@ -35,7 +35,7 @@
                             notificationService.displayError('Authentication required.');
                             $rootScope.previousState = $location.path();
                             $location.path('/login');
-                        } else if (failurte != null) {
+                        } else if (failure != null) {
                             failure(error);
                         }
                     });

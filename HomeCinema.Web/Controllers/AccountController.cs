@@ -30,7 +30,7 @@ namespace HomeCinema.Web.Controllers
     {
         private readonly IMembershipService _membershipService;
 
-        public AccountController(IMembershipService membershipService, IEntityBaseRepository<Error> errorsRepository, IUnitOfWork unitOfWork) : base(errorsRepository, unitOfWork)
+        public AccountController(IMembershipService membershipService, IEntityBaseRepository<Error> _errorsRepository, IUnitOfWork _unitOfWork) : base(_errorsRepository, _unitOfWork)
         {
             _membershipService = membershipService;
         }
@@ -44,11 +44,11 @@ namespace HomeCinema.Web.Controllers
             {
                 HttpResponseMessage response = null;
 
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    var userContext = _membershipService.ValidateUser(user.Username, user.Password);
+                    MembershipContext _userContext = _membershipService.ValidateUser(user.Username, user.Password);
 
-                    if(userContext.User != null)
+                    if (_userContext.User != null)
                     {
                         response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
                     }
@@ -58,9 +58,7 @@ namespace HomeCinema.Web.Controllers
                     }
                 }
                 else
-                {
                     response = request.CreateResponse(HttpStatusCode.OK, new { success = false });
-                }
 
                 return response;
             });

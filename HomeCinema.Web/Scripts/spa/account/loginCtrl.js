@@ -11,7 +11,7 @@
         $scope.user = {};
 
         function login() {
-            membershipService.login($scope.user, loginComplete);
+            membershipService.login($scope.user, loginCompleted);
         }
 
         function loginCompleted(result) {

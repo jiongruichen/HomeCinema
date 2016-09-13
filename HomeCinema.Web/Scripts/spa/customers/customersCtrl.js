@@ -6,7 +6,6 @@
     customersCtrl.$inject = ['$scope', '$modal', 'apiService', 'notificationService'];
 
     function customersCtrl($scope, $modal, apiService, notificationService) {
-
         $scope.pageClass = 'page-customers';
         $scope.loadingCustomers = true;
         $scope.page = 0;
@@ -33,9 +32,7 @@
                 }
             };
 
-            apiService.get('/api/customers/search/', config,
-            customersLoadCompleted,
-            customersLoadFailed);
+            apiService.get('/api/customers/search/', config, customersLoadCompleted, customersLoadFailed);
         }
 
         function openEditDialog(customer) {
@@ -61,7 +58,6 @@
             if ($scope.filterCustomers && $scope.filterCustomers.length) {
                 notificationService.displayInfo(result.data.Items.length + ' customers found');
             }
-
         }
 
         function customersLoadFailed(response) {

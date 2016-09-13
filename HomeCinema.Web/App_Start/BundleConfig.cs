@@ -43,7 +43,7 @@ namespace HomeCinema.Web
                 "~/Scripts/spa/layout/topBar.directive.js",
                 "~/Scripts/spa/layout/sideBar.directive.js",
                 "~/Scripts/spa/layout/customPager.directive.js",
-                "~/Scripts/spa/directives/rating.directive.js",
+                "~/Scripts/spa/directives/componentRating.directive.js",
                 "~/Scripts/spa/directives/availableMovie.directive.js",
                 "~/Scripts/spa/account/loginCtrl.js",
                 "~/Scripts/spa/account/registerCtrl.js",

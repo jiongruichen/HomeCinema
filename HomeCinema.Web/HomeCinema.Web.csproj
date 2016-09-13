@@ -228,7 +228,6 @@
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -353,6 +352,8 @@
     <Content Include="Scripts\spa\layout\topBar.html" />
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
+    <Content Include="Scripts\spa\movies\movies.html" />
+    <Content Include="Scripts\spa\movies\moviesCtrl.js" />
     <Content Include="Scripts\spa\services\apiService.js" />
     <Content Include="Scripts\spa\services\membershipService.js" />
     <Content Include="Scripts\spa\services\notificationService.js" />

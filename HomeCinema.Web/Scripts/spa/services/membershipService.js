@@ -12,12 +12,12 @@
             saveCredentials: saveCredentials,
             removeCredentials: removeCredentials,
             isUserLoggedIn: isUserLoggedIn
-        };
+        }
 
-        function login(user, completed){
+        function login(user, completed) {
             apiService.post('/api/account/authenticate', user, completed, loginFailed);
         }
-        
+
         function register(user, completed) {
             apiService.post('/api/account/register', user, completed, registrationFailed);
         }
@@ -32,7 +32,7 @@
                 }
             };
 
-            $http.defaults.headers.common['Authorization'] = 'Basic' + membershipData;
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + membershipData;
             $cookieStore.put('repository', $rootScope.repository);
         }
 
@@ -53,7 +53,7 @@
         function registrationFailed(response) {
             notificationService.displayError('Registration failed. Try again.');
         }
-
+        
         return service;
     }
 })(angular.module('common.core'));
