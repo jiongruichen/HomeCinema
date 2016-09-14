@@ -104,6 +104,7 @@
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Configurations\UserRoleConfiguration.cs" />
     <Compile Include="Extensions\CustomerExtensions.cs" />
+    <Compile Include="Extensions\StockExtensions.cs" />
     <Compile Include="HomeCinemaContext.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
