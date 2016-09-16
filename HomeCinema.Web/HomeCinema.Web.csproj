@@ -359,6 +359,7 @@
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
     <Content Include="Scripts\spa\movies\details.html" />
+    <Content Include="Scripts\spa\movies\edit.html" />
     <Content Include="Scripts\spa\movies\movieDetailsCtrl.js" />
     <Content Include="Scripts\spa\movies\movies.html" />
     <Content Include="Scripts\spa\movies\moviesCtrl.js" />
