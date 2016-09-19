@@ -23,8 +23,6 @@ namespace HomeCinema.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             GlobalConfiguration.Configuration.EnsureInitialized();
-            //GlobalConfiguration.Configure(WebApiConfig.Register);
-            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

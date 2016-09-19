@@ -10,7 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace HomeCinema.Web.Controllers
 {
@@ -35,7 +35,7 @@ namespace HomeCinema.Web.Controllers
             _stocksRepository = stocksRepository;
         }
 
-        [System.Web.Http.HttpGet]
+        [HttpGet]
         [Route("{id:int}/rentalhistory")]
         public HttpResponseMessage RentalHistory(HttpRequestMessage request, int id)
         {
@@ -52,7 +52,7 @@ namespace HomeCinema.Web.Controllers
         }
 
         [HttpPost]
-        [Route("return/{rentalId:int")]
+        [Route("return/{rentalId:int}")]
         public HttpResponseMessage Return(HttpRequestMessage request, int rentalId)
         {
             return CreateHttpResponse(request, () => 

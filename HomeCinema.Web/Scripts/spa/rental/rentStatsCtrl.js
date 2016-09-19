@@ -1,7 +1,7 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('rentalStatsCtrl', rentalStatsCtrl);
+    app.controller('rentStatsCtrl', rentStatsCtrl);
 
     rentStatsCtrl.$inject = ['$scope', 'apiService', 'notificationService', '$timeout'];
 

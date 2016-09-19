@@ -11,7 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace HomeCinema.Web.Controllers
 {
@@ -132,7 +132,7 @@ namespace HomeCinema.Web.Controllers
             });
         }
 
-        [System.Web.Http.HttpGet]
+        [HttpGet]
         [Route("search/{page:int=0}/{pageSize=4}/{filter?}")]
         public HttpResponseMessage Search(HttpRequestMessage request, int? page, int? pageSize, string filter = null)
         {
