@@ -1,4 +1,6 @@
-﻿using HomeCinema.Services;
+﻿using HomeCinema.Data.Infrastructure;
+using HomeCinema.Entities;
+using HomeCinema.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,11 @@ namespace HomeCinema.Web.Infrastructure.Extensions
         internal static IMembershipService GetMembershipService(this HttpRequestMessage request)
         {
             return request.GetService<IMembershipService>();
+        }
+
+        internal static IEntityBaseRepository<T> GetDataRepository<T>(this HttpRequestMessage request) where T : class, IEntityBase, new()
+        {
+            return request.GetService<IEntityBaseRepository<T>>();
         }
 
         private static TService GetService<TService>(this HttpRequestMessage request)

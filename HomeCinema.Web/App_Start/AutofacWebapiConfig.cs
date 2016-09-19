@@ -3,6 +3,7 @@ using Autofac.Integration.WebApi;
 using HomeCinema.Data;
 using HomeCinema.Data.Infrastructure;
 using HomeCinema.Services;
+using HomeCinema.Web.Infrastructure.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -55,6 +56,10 @@ namespace HomeCinema.Web.App_Start
             builder.RegisterType<MembershipService>()
                 .As<IMembershipService>()
                 .InstancePerRequest();
+
+            // Generic Data Repository Factory
+            builder.RegisterType<DataRepositoryFactory>()
+                .As<IDataRepositoryFactory>().InstancePerRequest();
 
             Container = builder.Build();
 
