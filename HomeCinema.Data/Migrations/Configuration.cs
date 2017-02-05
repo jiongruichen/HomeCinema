@@ -31,24 +31,24 @@ namespace HomeCinema.Data.Migrations
             // create roles
             context.RoleSet.AddOrUpdate(r => r.Name, GenerateRoles());
 
-            // username: chsakell, password: homecinema
+            // username: admin, password: homecinema
             context.UserSet.AddOrUpdate(u => u.Email, new User[]{
                 new User()
                 {
-                    Email="chsakells.blog@gmail.com",
-                    Username="chsakell",
-                    HashedPassword ="XwAQoiq84p1RUzhAyPfaMDKVgSwnn80NCtsE8dNv3XI=",
-                    Salt = "mNKLRbEFCH8y1xIyTXP4qA==",
+                    Email="admin@mail.com",
+                    Username="admin",
+                    HashedPassword ="cgtWo25QzYK4S1DhPwivJYB+dq77Ydy34ohrf1E+JEM=",
+                    Salt = "h/9kVOV5occR5yzCsTJ46A==",
                     IsLocked = false,
                     DateCreated = DateTime.Now
                 }
             });
 
-            // // create user-admin for chsakell
+            // // create user-admin
             context.UserRoleSet.AddOrUpdate(new UserRole[] {
                 new UserRole() {
-                    RoleId = 1, // admin
-                    UserId = 1  // chsakell
+                    RoleId = 1,
+                    UserId = 1
                 }
             });
         }
