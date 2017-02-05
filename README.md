@@ -12,7 +12,7 @@
 <li>3rd part libraries</li>
 </ol>
 
-<h3 style="font-weight:normal;">Installation instructions</h3>
+<h3 style="font-weight:normal;">Installation Instructions</h3>
 <ol>
 <li>Build solution to restore packages</li>
 <li>Rebuild solution</li>
