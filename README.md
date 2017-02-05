@@ -1,4 +1,4 @@
-<h2 style="color:brown">Building Single Page Applications using Web API and AngularJS</h2>
+<h2 style="color:brown">Home Cinema</h2>
 
 <h3 style="font-weight:normal;">Frameworks - Libraries</h3>
 <ol>
